@@ -53,7 +53,7 @@ interface IPancakeRouter02 {
         returns (uint amountToken, uint amountETH, uint liquidity);
 }
 
-contract PepepBorn is ERC20, Ownable {
+contract PepePoliceToken is ERC20, Ownable {
     using SafeMath for uint256;
 
     mapping(address => bool) controllers;
@@ -65,7 +65,7 @@ contract PepepBorn is ERC20, Ownable {
     uint256 public sellTax;
     uint256 public buyTax;
 
-    constructor() ERC20("Pepepolice", "PPT") {
+    constructor() ERC20("PepePoliceToken", "PPT") {
         address _router = 0xD99D1c33F9fC3444f8101754aBC46c52416550D1;
         router = IPancakeRouter02(_router);
         pair = IPancakeFactory(router.factory()).createPair(
